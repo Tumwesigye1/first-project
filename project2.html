@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+                    body {
+                background-color: aqua;
+            }
+
+            button {
+                border: 1px solid rgb(199, 30, 53);
+                background-color: rgb(255, 243, 192);
+                padding: 10px;
+                color: green;
+                border-radius: 10px;
+                margin-left: 600px;
+                margin-bottom: 30px;
+            }
+
+            #my-container {
+                width: 475px;
+                height: 475px;
+                background: #E9D8F5;
+                position: relative;
+                margin: 0px 500px;
+            }
+
+            #animate-penguin {
+                width: 75px;
+                position: absolute;
+                height: 75px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 3rem;
+            }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation 1</title>
+    <!-- <link rel="stylesheet" href="./penguin.css"> -->
+</head>
+<body>
+    
+        <h1>Animation</h1>
+        <button id="animate-btn">Slide penguin</button>
+        <div id="my-container">
+            <img id="animate-penguin" src="./penguin.jpeg">
+        </div>
+    
+    <script> 
+        let button = document.getElementById('animate-btn');
+        button.onclick = function() {
+
+            let position = 0;
+            let penguin = document.getElementById('animate-penguin');
+            let t = setInterval(move, 10);
+
+            function move (){
+                if(position == 400) {
+                    clearInterval(t);
+            
+                } else {
+                    position++;
+                    penguin.style.left = position + "px";
+                    // penguin.style.top = position + "px";
+                }
+            }   
+        }
+    </script>
+</body>
+</html>
